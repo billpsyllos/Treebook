@@ -4,7 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-         has_many :statuses
+  has_many :statuses
+  has_one :user_profiles
+         
+  ROLES = %w[admin moderator author banned]
 
   def full_name
   	full_name + " " + last_name

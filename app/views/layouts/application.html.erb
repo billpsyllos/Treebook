@@ -13,10 +13,12 @@
 				<a  class="brand " href="#">Paikse Mpalitsa</a>
 				<ul class="nav">
 					<li><%= link_to "Posts", statuses_path %></a></li>
+					<li><%= link_to "Profils", user_profiles_path %></a></li>
 				</ul>
 				<ul class="nav pull-right">
 					<% if user_signed_in? %>
 						<li><%= link_to current_user.first_name, edit_user_registration_path %></li>
+						<li><%= link_to 'Profil', new_user_profile_path %></li>
 						<li><%= link_to 'Log out', logout_path %></li>
 					<% else %>
 						<li><%= link_to "Register", register_path %> </li>

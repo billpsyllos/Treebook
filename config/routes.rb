@@ -1,4 +1,6 @@
 Treebook::Application.routes.draw do
+  resources :user_profiles
+
   devise_for :users
   
   devise_scope :user do
@@ -10,6 +12,7 @@ Treebook::Application.routes.draw do
 
   resources :statuses
   root to: 'statuses#index'
+  #root to: 'user/sign_in'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -16,6 +16,11 @@ group :production do
 	gem "pg"
 end
 
+#for user permissions
+gem 'cancan'
+
+#defined roles
+#gem 'role_model'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
