@@ -12,7 +12,9 @@ Treebook::Application.routes.draw do
 
   resources :statuses
   root to: 'statuses#index'
-  #root to: 'user/sign_in'
+  # root to: 'user/sign_in'
+
+  get '/:id' , to: 'user_profiles#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

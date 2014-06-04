@@ -24,7 +24,7 @@ class UserProfilesController < ApplicationController
   # POST /user_profiles
   # POST /user_profiles.json
   def create
-    @user_profile = UserProfile.new(user_profile_params)
+    @user_profile = current_user.UserProfiles.new(user_profile_params)
 
     respond_to do |format|
       if @user_profile.save
@@ -69,6 +69,6 @@ class UserProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_profile_params
-      params.require(:user_profile).permit(:id, :body, :user_id)
+      params.require(:user_profile).permit( :user_id, :body)
     end
 end
