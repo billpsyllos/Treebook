@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :statuses
-  has_one :user_profiles
+
          
   ROLES = %w[admin moderator author banned]
 
